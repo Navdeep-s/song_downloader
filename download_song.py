@@ -1,11 +1,12 @@
 
-
+import warnings
 import requests,bs4
-import webbrowser
 import os
 import sys
 import threading
 
+
+warnings.filterwarnings("ignore")
 quality_set=True
 quality =0
 
@@ -32,7 +33,9 @@ def get_root(url):
 url = "https://djpunjab.fm/punjabi-music/ammi-kamal-khan-mp3-song-294966.html#gsc.tab=0"
 
 
-path="E:\\Songs"
+path_file = open("path.txt","r")
+path=path_file.read()
+path_file.close()
 
 def download_song_from_link(url):
     os.chdir(path)
